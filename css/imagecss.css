@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+#imageFlow{
+    overflow: hidden;
+}
+#imageFlow {position:absolute;width:100%;height:80%;left:0%;bottom:0;}
+#imageFlow .diapo{position:absolute;left:-1000px;cursor:pointer;-ms-interpolation-mode:nearest-neighbor;}
+/*#imageFlow .link{border:dotted #fff 1px;margin-left:-1px;margin-bottom:-1px;}*/
+#imageFlow .bank{visibility:hidden;}
+/*#imageFlow .top{position:absolute;width:100%;height:40%;background:#181818;}*/
+#imageFlow .text{position:absolute;left:0px;width:100%;bottom:10%;text-align:center;color:#FFF;font-family:verdana, arial, Helvetica, sans-serif;z-index:1;}
+#imageFlow .title{font-size:2em;font-weight:bold;}
+#imageFlow .legend{font-size:1.5em;}
+/*#imageFlow .scrollbar{position:absolute;left:10%;bottom:10%;width:80%;height:16px;z-index:1;}*/
+/*#imageFlow .track{position:absolute;left:1%;width:98%;height:16px;filter:alpha(opacity=1);opacity:1;}*/
+/*#imageFlow .arrow-left{position:absolute;}*/
+/*#imageFlow .arrow-right{position:absolute;right:0px;}*/
+/*#imageFlow .bar{position:absolute;height:16px;left:25px;}*/
