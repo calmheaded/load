@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>气象信息综合显示系统</title>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="js/bootstrap-table.js"></script>
+    <script src="js/jquery-nicescroll.js"></script>
+    <script src="js/jquery-jSelect.js"></script>
+    <script src="js/jquery.sliderPro.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/indexcss.css" rel="stylesheet">
+    <link href="css/slider-pro.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="bac">
+    <img class="bac_ani" src="img/qing.jpg"></div>
+</div>
+
+    <!--导航-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+<!--干掉的版本-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<span class="d_time txt_air"></span>-->
+                <p class="nav_p" href="#"><img class="weather-img3" src="img/logo.png"><span>北京气象综合显示系统</span></p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right nav_ap">
+
+                    <li class="ap_a"><img class="weather-img2" src="img/sy1.png"><a href="#">首页</a></li>
+                    <li class="ap_b"><img class="weather-img2" src="img/gc1.png"><a href="#">观测</a></li>
+                    <li class="ap_c"><img class="weather-img2" src="img/yj1.png"><a href="#">预警</a></li>
+                    <li class="ap_d"><img class="weather-img2" src="img/yb1.png"><a href="#">预报</a></li>
+                    <li class="ap_e"><img class="weather-img2" src="img/ms1.png"><a href="#">模式</a></li>
+                    <li class="ap_f"><img class="weather-img2" src="img/fwcp1.png"><a href="#">服务产品</a></li>
+                    <li class="ap_g"><img class="weather-img2 ap_g" src="img/qhtj1.png"><a class="ap_g" href="#">气候统计</a></li>
+                    <div class="nav_bac">
+
+                    </div>
+                </ul>
+            </div>
+<!--干掉的版本-->
+        </div>
+    </nav>
+    <!--轮播-->
+        <div class="jumbotron main-box0">
+            <div class="container-fluid box0_div">
+                <div class="col-md-3">
+                    <div class="yjp">
+                        <p><a href="#"><span class="flowearly_ani "></span><span class="flowearly_txt">预警信号</span></a></p>
+                    </div>
+                    <!--<div class="flowearly btn-group-vertical " role="group">-->
+                        <!--<p><a href="#"><span class="flowearly_ani "></span><span class="flowearly_txt">北京预警</span> </a></p>-->
+                        <!--<div id="swiper_wrap1" class="swiper_wrap navbar-right">-->
+                            <!--<ul id="font_inner1" class="font_inner">-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风橙色色预警大风11</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风红色预警222</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风蓝色预警333</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风橙色预警444</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<a href="javascript:void(0)" id="lt1" class="lt">↑</a>-->
+                            <!--<a href="javascript:void(0)" id="gt2" class="gt">↓</a>-->
+                        <!--</div>-->
+                        <!--<p class="jyj"><a href="#"><span class="flowearly_ani"></span><span class="flowearly_txt">京津冀预警</span></a></p>-->
+                        <!--<div id="swiper_wrap2" class="swiper_wrap navbar-right">-->
+                            <!--<ul id="font_inner2" class="font_inner">-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风橙色色预警大风</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风蓝色色预警777</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风红色预警888</a>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<a href="#">怀柔区气象台解除大风色预警999</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<a href="javascript:void(0)" id="lt" class="lt fx">↑</a>-->
+                            <!--<a href="javascript:void(0)" id="gt" class="gt fx">↓</a>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                    <div class="ri_box lsjt">
+                        <h3 class="txt_air margin_box">历史上的今天</h3>
+                        <!--<P class="txt_air margin_box lsjt_img"><img class="weather-img4 txt_air margin_box" src="img/历史.png"></P>-->
+                        <p class="weather-p txt_air margin_box"><img class="weather-img2" src="img/最高温.png"> 最高气温： <span>2008年</span> <span id="max_cor">49℃</span></p>
+                        <p class="txt_air margin_box"><img class="weather-img2" src="img/最低温.png"> 最高气温： <span>2008年</span> <span id="min_cor">-49℃</span></p>
+                        <p class="txt_air margin_box"><img class="weather-img2" src="img/最大降水.png"> 最大降水量： <span>2008年</span> <span id="wat_cor">18mm</span></p>
+                        <p class="txt_air margin_box"><img class="weather-img2" src="img/风向.png"> 最大风力： <span>2008年</span> <span id="fen_cor">12级</span></p>
+                    </div>
+                    <div class="box2_topbor lejs">
+                        <h3 class="txt_air">累计降水量</h3>
+                        <p class="weather-p txt_air"><img class="weather-img2" src="img/最大降水.png"> <span>1月1日至今日累计降水量：XXXX毫米</span></p>
+                        <p class="weather-p txt_air"><img class="weather-img2" src="img/最大降水.png"> <span>去年同期降水：XXXX毫米</span></p>
+                        <p class="txt_air"><img class="weather-img2" src="img/最大降水.png"> <span>常年（1981-2010）平均同期降水量：XXXX毫米</span></p>
+                        <h3 class="txt_air">平均温度：</h3>
+                        <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>1月1日至今日平均温度：XXXX℃</span></p>
+                        <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>去年平均温度：XXXX℃</span></p>
+                    </div>
+                </div>
+                <div class="col-md-8 box0-left">
+                    <div id="example5" class="">
+                        <div class="sp-slides">
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f1.png" data-retina="/f1.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f2.png" data-retina="/f2.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f3.png" data-retina="/f3.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f4.png" data-retina="/f4.png"/>
+                            </div>
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f1.png" data-retina="/f1.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f2.png" data-retina="/f2.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f3.png" data-retina="/f3.png"/>
+                            </div>
+
+                            <div class="sp-slide"><img class="sp-image" data-src="dataimg/f4.png" data-retina="/f4.png"/>
+                            </div>
+                        </div>
+
+                        <div class="sp-thumbnails">
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f1.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f2.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f3.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f4.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f1.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f2.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f3.png"/> </div>
+                            </div>
+                            <div class="sp-thumbnail">
+                                <div class="sp-thumbnail-image-container"> <img class="sp-thumbnail-image" src="dataimg/f4.png"/> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="flowlist_pa" class="flowlist btn-group-vertical" role="group">
+                        <p id="flow_p1"><a href="#"><img class="weather-img1" src="img/降水.png"><span>降水</span></a></p>
+                        <p id="flow_p2"><a href="#"><img class="weather-img1" src="img/温度值.png"><span>温度</span></a></p>
+                        <p id="flow_p3"><a href="#"><img class="weather-img1" src="img/风.png"><span>风</span></a></p>
+                        <p id="flow_p4"><a href="#"><img class="weather-img1" src="img/能见度.png"><span>能见度</span></a></p>
+                        <p id="flow_p5"><a href="#"><img class="weather-img1" src="img/雷达.png"><span>雷达</span></a></p>
+                    </div>
+                    <script>
+                        var flowlist_width=$(".box0-left").width();
+                        var f_li_width=$(".flowlist p").width();
+//                        var f_span=$(".flowlist span").height();
+//                        var f_span_mar=(f_li_width-f_span)/2;
+//                        $(".flowlist p span").css('margin-top',f_span_mar);
+                        $(".flowlist p").css('height',f_li_width);
+                        $( document ).ready(function( $ ) {
+                            $( '#example5' ).sliderPro({
+                                width: flowlist_width,
+                                height: flowlist_width*0.65,
+                                orientation: 'vertical',
+                                autoplayDelay:'50000000',
+                                arrows: false,
+                                buttons: false,
+                                thumbnailsPosition: 'right',
+                                thumbnailPointer: true,
+                                thumbnailWidth: 140,
+                                imageScaleMode:"contain",
+                                breakpoints: {
+                                    800: {
+                                        thumbnailsPosition: 'bottom',
+                                    },
+                                    768: {
+                                        thumbnailsPosition: 'bottom',
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+
+
+
+                </div>
+                <div class="col-md-1 box0-3">
+                    <!--<p><span class="box4_hid">天气公报<img class="weather-img6" src="img/tqgb.png"></span></p>-->
+                    <div class="row right_fw">
+                        <div class="text-center">
+                            <p><span class="box4_hid">天气公报<img class="weather-img8" src="img/tqgb.png"></span></p>
+                        </div>
+                        <div class=" text-center">
+                            <p><span class="box4_hid">天气快报<img class="weather-img8" src="img/tqkb.png"></span></p>
+                        </div>
+                        <div class=" text-center">
+                            <p><span class="box4_hid">环境气象<img class="weather-img8" src="img/hjqx.png"></span></p>
+                        </div>
+                        <div class=" text-center">
+                            <p><span class="box4_hid">气象灾害<img class="weather-img8" src="img/qxzh.png"></span></p>
+                        </div>
+                        <div class=" text-center">
+                            <p><span class="box4_hid">重要气候<img class="weather-img8" src="img/zyqh.png"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--<div id="flowlist_pa" class="flowlist btn-group-vertical" role="group">-->
+                <!--<p id="flow_p1"><a href="#"><img class="weather-img1" src="img/降水.png"><span>降水</span></a></p>-->
+                <!--<p id="flow_p2"><a href="#"><img class="weather-img1" src="img/温度值.png"><span>温度</span></a></p>-->
+                <!--<p id="flow_p3"><a href="#"><img class="weather-img1" src="img/风.png"><span>风</span></a></p>-->
+                <!--<p id="flow_p4"><a href="#"><img class="weather-img1" src="img/能见度.png"><span>能见度</span></a></p>-->
+                <!--<p id="flow_p5"><a href="#"><img class="weather-img1" src="img/pm1.png"><span>雷达</span></a></p>-->
+            <!--</div>-->
+
+
+    <div class="jumbotron main-box1">
+        <div class="container-fluid box1-div">
+            <div id="box1-hid" class="box1-hid">
+
+            </div>
+            <!--<h2 class="text-center txt_air box1-h2">实况统计</h2>-->
+            <div class="row">
+                <div class="col-md-5 box1_left_ul">
+                    <!--<ul class="box1_ul">-->
+                        <!--<li class="box1_a"><img class="weather-img1" src="img/dqsk1.png">当前实况小时统计</li>-->
+                        <!--<li class="box1_b"><img class="weather-img1" src="img/ztsk1.png">昨日实况</li>-->
+                        <!--<li class="box1_c"><img class="weather-img1" src="img/dqxs1.png">当前小时降水量Top10</li>-->
+                        <!--<li class="box1_d"><img class="weather-img1" src="img/ljsk1.png">累计实况雨量</li>-->
+                        <!--<div class="box1_ul_right">-->
+                        <!--</div>-->
+                    <!--</ul>-->
+                    <div class="table-responsive table_zrsk">
+                        <table class="table table-bordered text-center table_tab">
+                        <p class="txt_air">当前小时降水量Top10</p>
+                        <tr>
+                            <td>站名</td>
+                            <td>小时降水量</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div class="table-responsive table_zrsk">
+                        <table class="table table-bordered text-center table_tab">
+                        <p class="txt_air">当前实况小时统计</p>
+                        <tr>
+                            <td></td>
+                            <td>出现站点</td>
+                            <td>要素质</td>
+                        </tr>
+                        <tr>
+                            <td>出现时刻</td>
+                            <td>出现站点</td>
+                            <td>要素质</td>
+                        </tr>
+                        <tr>
+                            <td>最高温度</td>
+                            <td>交道</td>
+                            <td>16.6</td>
+                        </tr>
+                        <tr>
+                            <td>最低温度</td>
+                            <td>小海陀</td>
+                            <td>-15.2</td>
+                        </tr>
+                        <tr>
+                            <td>最高平均风</td>
+                            <td>小海陀</td>
+                            <td>22.5</td>
+                        </tr>
+                        <tr>
+                            <td>最高极大风</td>
+                            <td>小海陀</td>
+                            <td>33.7</td>
+                        </tr>
+                        <tr>
+                            <td>时降水最大值</td>
+                            <td>官园</td>
+                            <td>0.2</td>
+                        </tr>
+                        <tr>
+                            <td>累计降水最大值</td>
+                            <td>官园</td>
+                            <td>0.2</td>
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="table-responsive table_zrsk">
+                        <table class="table table-bordered text-center table_tab">
+                            <p class="txt_air">昨日实况</p>
+                            <tr>
+                                <td></td>
+                                <td>出现时刻</td>
+                                <td>出现站点</td>
+                                <td>要素质</td>
+                            </tr>
+                            <tr>
+                                <td>最高温度</td>
+                                <td>14:11</td>
+                                <td>交道</td>
+                                <td>16.6</td>
+                            </tr>
+                            <tr>
+                                <td>最低温度</td>
+                                <td>14:11</td>
+                                <td>小海陀</td>
+                                <td>-15.2</td>
+                            </tr>
+                            <tr>
+                                <td>最高平均风</td>
+                                <td>14:11</td>
+                                <td>小海陀</td>
+                                <td>22.5</td>
+                            </tr>
+                            <tr>
+                                <td>最高极大风</td>
+                                <td>14:11</td>
+                                <td>小海陀</td>
+                                <td>33.7</td>
+                            </tr>
+                            <tr>
+                                <td>时降水最大值</td>
+                                <td>14:11</td>
+                                <td>官园</td>
+                                <td>0.2</td>
+                            </tr>
+                            <tr>
+                                <td>累计降水最大值</td>
+                                <td>14:11</td>
+                                <td>官园</td>
+                                <td>0.2</td>
+                            </tr>
+                            <p class="txt_air">2017/3/20 8:00 到 2017/3/20 12:00</p>
+                        </table>
+                    </div>
+                    <div class="table-responsive table_zrsk">
+                        <table class="table table-bordered text-center table_tab">
+                        <p class="txt_air">累计实况雨量</p>
+                        <tr>
+                            <td>站名</td>
+                            <td>小时降水量</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                        <tr>
+                            <td>先农坛</td>
+                            <td>4.2</td>
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron main-box">
+        <div class="container-fluid main-box-top">
+            <div class="row">
+                <div class="col-md-2 main-box-top-btn">
+                    <div class="form">
+                        <select id="mySelect" class="select btn-lg">
+                            <option value="站点选择">站点选择</option>
+                            <option value="54433">朝阳</option>
+                            <option value="54399">海淀</option>
+                            <option value="54513">石景山</option>
+                            <option value="54514">丰台</option>
+                            <option value="54499">昌平</option>
+                            <option value="54398">顺义</option>
+                            <option value="54431">通州</option>
+                            <option value="54511">观象台</option>
+                            <option value="54594">大兴</option>
+                            <option value="54505">门头沟</option>
+                            <option value="54501">斋堂</option>
+                            <option value="54596">房山</option>
+                            <option value="54597">霞云岭</option>
+                            <option value="54424">平谷</option>
+                            <option value="54410">延庆</option>
+                            <option value="54419">怀柔</option>
+                            <option value="54412">汤河口</option>
+                            <option value="54416">密云</option>
+                            <option value="54421">上甸子</option>
+                        </select>
+                        </div>
+                </div>
+                <div class="col-md-10" id="date_d" style=" height: 400px;"></div>
+            </div>
+            <!--<h4>星期一，13:46AM</h4>-->
+            <!--<img class="weather-img4" src="img/阴天.png">-->
+            <!--&lt;!&ndash;<p class="weather-p"><a href="#"><img class="weather-img2" src="img/预警.png"> 预警</a></p>&ndash;&gt;-->
+            <!--<p class="weather-p"><img class="weather-img2 " src="img/湿度.png"> 湿度20%，<img class="weather-img2" src="img/风向.png"> 东南风2级</p>-->
+            <!--<p><img class="weather-img2" src="img/定位.png"> <span>海淀区，北京市，中国</span></p>-->
+            <!--<h1><img class="weather-img3" src="img/温度计.png">10℃</h1>-->
+        </div>
+        <div class="jumbotrom main-box-bottom">
+        <div class="container-fluid box_div">
+        <div class="row">
+            <div class="btn_flow_two  col-md-2">
+                <img class="weather-img4 flow_two_left" src="img/左箭头.png">
+                <img class="weather-img4 flow_two_right arrow-right" src="img/右箭头.png">
+            </div>
+            <div class="flow_two col-md-10">
+                <ul>
+                    <!--<li>-->
+                    <!--<div>-->
+                    <!--<h3>03/06</h3>-->
+                    <!--<h2>0℃-16℃</h2>-->
+                    <!--<img class="weather-img4" src="img/阴天.png">-->
+                    <!--<p class="weather-p">湿度20%</p>-->
+                    <!--<p>东南风2级</p>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <script>
+                        for(var i=0;i<=30;i++){
+                            var newli='<li>' +
+                                    '<div>' +
+                                    '<h3>03/'+(i+1)+'</h3>' +
+                                    '<h2>0℃-16℃</h2>' +
+                                    '<img class="weather-img4" src="img/阴天.png">' +
+                                    '<p class="weather-p">湿度20%</p>' +
+                                    '<p>东南风2级</p>' +
+                                    '</div>' +
+                                    '</li>';
+                            $(".flow_two ul").append(newli);
+                        }
+                        var flow_two_li=$(".flow_two li").width()+56;
+                        var flow_two_li_sum=flow_two_li*32;
+                        $(".flow_two ul").css('width',flow_two_li_sum);
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!--<div id="diagram"></div>-->
+
+
+
+    <div class="jumbotron main-box2">
+        <div class="container-fluid box2_div">
+                <div class="row con_row">
+                    <div class="col-md-6 ">
+                        <div class="col-md-4"></div>
+                        <div class="ri_box">
+                            <h3 class="txt_air margin_box">历史上的今天</h3>
+                            <img class="weather-img4 txt_air margin_box" src="img/历史.png">
+                            <p class="weather-p txt_air margin_box"><img class="weather-img2" src="img/最高温.png"> 最高气温： <span>2008年</span> <span id="max_cor">49℃</span></p>
+                            <p class="txt_air margin_box"><img class="weather-img2" src="img/最低温.png"> 最高气温： <span>2008年</span> <span id="min_cor">-49℃</span></p>
+                            <p class="txt_air margin_box"><img class="weather-img2" src="img/最大降水.png"> 最大降水量： <span>2008年</span> <span id="wat_cor">18mm</span></p>
+                            <p class="txt_air margin_box"><img class="weather-img2" src="img/风向.png"> 最大风力： <span>2008年</span> <span id="fen_cor">12级</span></p>
+                        </div>
+                        <!--<div class="col-md-4"></div>-->
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="box2_topbor">
+                            <h3 class="txt_air">累计降水量</h3>
+                            <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>1月1日至今日累计降水量：XXXX毫米</span></p>
+                            <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>去年同期降水</span></p>
+                            <p class="txt_air"><img class="weather-img2" src="img/最低温.png"> <span>常年（1981-2010）平均同期降水量：</span></p>
+                            <h3 class="txt_air">平均温度：</h3>
+                            <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>1月1日至今日平均温度：XXXX℃</span></p>
+                            <p class="weather-p txt_air"><img class="weather-img2" src="img/最高温.png"> <span>去年平均温度</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row box2_bottom">
+                <div class="col-md-2">
+                    <button id="jsdb" class="btn btn-lg"> 降水对比</button>
+                    <button id="qwdb" class="btn btn-lg box2_top"> 气温对比</button>
+                </div>
+                <div class="col-md-10">
+                    <div id="jsdb_data" style="height: 400px;"></div>
+                    <div id="qwdb_data" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="jumbotron main-box4">
+
+        <div class="exit-span">
+            <span class="exit-span1"></span>
+            <span class="exit-span2"></span>
+        </div>
+        <div class="container-fluid max_hid">
+            <p class="txt_air">决策服务产品</p>
+            <div class="row box4-div">
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">天气公报<img class="weather-img6" src="img/tqgb.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">天气快报<img class="weather-img6" src="img/tqkb.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">环境气象快报<img class="weather-img6" src="img/hjqx.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">气象灾害预警<img class="weather-img6" src="img/qxzh.png"></span></p>
+                </div>
+            </div>
+            <div class="row box4-div">
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">重要气候信息<img class="weather-img6" src="img/zyqh.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">预报预警类<img class="weather-img6" src="img/ybyj.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">专项服务类<img class="weather-img6" src="img/jxfw.png"></span></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p><span class="box4_hid">其他类报<img class="weather-img6" src="img/qtfw.png"></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid list_hid">
+            <embed class="emb"  width="100%" height="100%" src="pdf/pdf1.pdf" ></embed>
+            <!--<object classid="clsid:CA8A9780-280D-11CF-A24D-444553540000" width="800" height="800" border="0">-->
+
+                <!--<param name="SRC" value="pdf/pdf1.pdf">-->
+
+            <!--</object>-->
+            <!--<ul class="box4-ul">-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+                <!--<li>小荷才楼尖尖角，早有蜻蜓立上头</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+        $(".select").jSelect();
+    </script>
+</body>
+</html>
